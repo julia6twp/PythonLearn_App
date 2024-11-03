@@ -18,7 +18,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 // logo
 import logo from '../assets/logo.png';
 
-const pages = ['Home', 'About'];
+const pages = ['Home','Levels', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function MainAppBar() {
@@ -36,6 +36,9 @@ function MainAppBar() {
             navigate('/about');
         } else if (page === 'Home') {
             navigate('/');
+        }
+        else if (page === 'Levels') {
+            navigate('/levels');
         }
     };
 
