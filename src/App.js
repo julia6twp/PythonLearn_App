@@ -1,25 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { MantineProvider } from '@mantine/core';
-import Home from './components/Home';
-import About from './components/About';
-import BeginnerPage from './components/BeginnerPage';
-import Quiz from './components/Quiz';
-import PracticalTask from './components/PracticalTask';
+import Home from './pages/Home';
+import About from './pages/About';
+import BeginnerPage from './pages/BeginnerPage';
+import Quiz from './pages/Quiz';
+import PracticalTask from './pages/PracticalTask';
 
 function App() {
     return (
-        <MantineProvider withGlobalStyles withNormalizeCSS>
-            <Router>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/beginner" element={<BeginnerPage />} />
-                    <Route path="/quiz" element={<Quiz />} />
-                    <Route path="/practical-task" element={<PracticalTask />} />
-                </Routes>
-            </Router>
-        </MantineProvider>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/beginner" element={<BeginnerPage />} />
+                <Route path="/quiz" element={<Quiz />} />
+                <Route path="/practical-task" element={<PracticalTask />} />
+            </Routes>
+        </Router>
     );
 }
 
