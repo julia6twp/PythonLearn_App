@@ -6,6 +6,7 @@ import BeginnerPage from './pages/BeginnerPage';
 import Quiz from './pages/Quiz';
 import PracticalTask from './pages/PracticalTask';
 import ErrorPage from './pages/ErrorPage';
+import Level from "./pages/Level";
 
 function App() {
     return (
@@ -13,7 +14,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/levels" element={<About />} />
+                <Route path="/levels" element={<Level />} />
                 <Route path="/levels/beginner" element={<BeginnerPage />} />
                 <Route path="/quiz" element={<Quiz />} />
                 <Route path="/practical-task" element={<PracticalTask />} />
