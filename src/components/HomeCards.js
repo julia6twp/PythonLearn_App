@@ -4,6 +4,11 @@ import React from 'react';
 import ActionAreaCard from './ActionAreaCard';
 import Box from '@mui/material/Box';
 
+//ikony
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import InfoIcon from '@mui/icons-material/Info';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+
 function HomeCards() {
     return (
         <Box
@@ -11,24 +16,27 @@ function HomeCards() {
                 display: 'flex',
                 justifyContent: 'center',
                 gap: 4, // odstępy między kartami
-                paddingTop: 30, // odstęp od góry strony
+                paddingTop: 4, // odstęp od góry strony
             }}
         >
 
             <ActionAreaCard
                 title="About Us"
                 description="Test your knowledge with our interactive quizzes."
-                image="/static/images/cards/quiz.jpg"
+                IconComponent={InfoIcon}
+                link="/about"
             />
             <ActionAreaCard
                 title="Tasks"
                 description="Engage with hands-on tasks to deepen your skills."
-                image="/static/images/cards/tasks.jpg"
+                IconComponent={AssignmentIcon}
+                link="/levels"
             />
             <ActionAreaCard
                 title="Achievements"
                 description="Join discussions and learn from other developers."
-                image="/static/images/cards/community.jpg"
+                IconComponent={EmojiEventsIcon}
+                link="/achievements"
             />
         </Box>
     );
