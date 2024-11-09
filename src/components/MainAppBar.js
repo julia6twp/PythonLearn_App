@@ -18,7 +18,7 @@ import MenuItem from '@mui/material/MenuItem';
 // logo
 import logo from '../assets/logo.png';
 
-const pages = ['Home','Levels', 'About'];
+const pages = ['Home','Tasks', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function MainAppBar() {
@@ -37,8 +37,8 @@ function MainAppBar() {
         } else if (page === 'Home') {
             navigate('/');
         }
-        else if (page === 'Levels') {
-            navigate('/levels');
+        else if (page === 'Tasks') {
+            navigate('/tasks');
         }
     };
 
