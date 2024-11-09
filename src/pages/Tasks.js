@@ -1,8 +1,8 @@
-// src/pages/Level.js
+// src/pages/Tasks.js
 import React from 'react';
 import MainAppBar from '../components/MainAppBar';
 
-function Level() {
+function Tasks() {
     return (
         <div>
             <MainAppBar />
@@ -11,4 +11,4 @@ function Level() {
     );
 }
 
-export default Level;
+export default Tasks;
