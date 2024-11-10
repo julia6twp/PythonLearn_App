@@ -18,7 +18,7 @@ function TasksCards() {
                 display: 'flex',
                 justifyContent: 'center',
                 gap: 4, // odstępy między kartami
-                paddingTop: 4, // odstęp od góry strony
+                paddingTop: 25, // odstęp od góry strony
             }}
         >
 
@@ -27,18 +27,21 @@ function TasksCards() {
                 description="Test your knowledge with our interactive quizzes."
                 IconComponent={BedroomBabyIcon}
                 link="/about"
+                iconColor="green"
             />
             <ActionAreaCard
-                title="Intermediate level"
+                title="Intermediate levels"
                 description="Engage with hands-on tasks to deepen your skills."
                 IconComponent={HourglassBottomIcon}
                 link="/levels"
+                iconColor="orange"
             />
             <ActionAreaCard
                 title="Additional levels"
                 description="Join discussions and learn from other developers."
                 IconComponent={ScienceIcon}
                 link="/achievements"
+                iconColor="black"
             />
         </Box>
     );

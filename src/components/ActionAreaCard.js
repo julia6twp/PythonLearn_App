@@ -8,7 +8,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
 
-export default function ActionAreaCard({ title, description, IconComponent, link }) {
+export default function ActionAreaCard({ title, description, IconComponent, link, iconColor }) {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -27,7 +27,7 @@ export default function ActionAreaCard({ title, description, IconComponent, link
                     }}
                 >
                     {/* Wyświetlanie ikony */}
-                    <IconComponent sx={{ fontSize: 80, color: 'primary.main' }} />
+                    <IconComponent sx={{ fontSize: 80, color: iconColor }} />
                 </Box>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">

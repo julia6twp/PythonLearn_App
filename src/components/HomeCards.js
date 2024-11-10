@@ -25,18 +25,21 @@ function HomeCards() {
                 description="Test your knowledge with our interactive quizzes."
                 IconComponent={InfoIcon}
                 link="/about"
+                iconColor="black"
             />
             <ActionAreaCard
                 title="Tasks"
                 description="Engage with hands-on tasks to deepen your skills."
                 IconComponent={AssignmentIcon}
-                link="/levels"
+                link="/tasks"
+                iconColor="black"
             />
             <ActionAreaCard
                 title="Achievements"
                 description="Join discussions and learn from other developers."
                 IconComponent={EmojiEventsIcon}
                 link="/achievements"
+                iconColor="black"
             />
         </Box>
     );
