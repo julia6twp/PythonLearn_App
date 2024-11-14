@@ -10,7 +10,6 @@ function Home() {
         <div>
             <MainAppBar />
 
-            {/* Dodajemy tekst powitalny nad kartami */}
             <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: 4, paddingBottom: 4 }}>
                 <Typography variant="h4" component="h1" align="center">
                     Witamy na stronie!

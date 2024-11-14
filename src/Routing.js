@@ -9,6 +9,8 @@ import PracticalTask from './pages/PracticalTask';
 import ErrorPage from './pages/ErrorPage';
 import Tasks from "./pages/Tasks";
 import LoginPage from "./pages/login/LoginPage";
+import LevelPage from "./pages/LevelPage";
+import TheoryPage from "./pages/TheoryPage";
 
 function Routing() {
     return (
@@ -18,6 +20,8 @@ function Routing() {
             <Route path="/about" element={<About />} />
             <Route path="/tasks" element={<Tasks />} />
             <Route path="/tasks/beginner" element={<BeginnerPage />} />
+            <Route path="/level/:levelId" element={<LevelPage />} />
+            <Route path="/theory" element={<TheoryPage />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/practical-task" element={<PracticalTask />} />
             <Route path="*" element={<ErrorPage />} />
