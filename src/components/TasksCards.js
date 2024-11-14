@@ -26,7 +26,7 @@ function TasksCards() {
                 title="Beginner levels"
                 description="Test your knowledge with our interactive quizzes."
                 IconComponent={BedroomBabyIcon}
-                link="/about"
+                link="/tasks/beginner"
                 iconColor="green"
             />
             <ActionAreaCard

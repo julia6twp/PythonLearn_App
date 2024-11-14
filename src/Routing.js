@@ -8,14 +8,16 @@ import Quiz from './pages/Quiz';
 import PracticalTask from './pages/PracticalTask';
 import ErrorPage from './pages/ErrorPage';
 import Tasks from "./pages/Tasks";
+import LoginPage from "./pages/login/LoginPage";
 
 function Routing() {
     return (
         <Routes>
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/tasks" element={<Tasks />} />
-            <Route path="/levels/beginner" element={<BeginnerPage />} />
+            <Route path="/tasks/beginner" element={<BeginnerPage />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/practical-task" element={<PracticalTask />} />
             <Route path="*" element={<ErrorPage />} />
