@@ -40,7 +40,7 @@ function TasksCards() {
                 title="Additional levels"
                 description="Join discussions and learn from other developers."
                 IconComponent={ScienceIcon}
-                link="/achievements"
+                link="/tasks/additional"
                 iconColor="black"
             />
         </Box>

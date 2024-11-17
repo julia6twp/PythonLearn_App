@@ -13,6 +13,7 @@ import LevelPage from "./pages/LevelPage";
 import TheoryPage from "./pages/TheoryPage";
 import AchievementsPage from "./pages/AchievementPage";
 import IntermediatePage from "./pages/IntermediatePage";
+import AdditionalPage from "./pages/AdditionalPage";
 
 function Routing() {
     return (
@@ -24,6 +25,7 @@ function Routing() {
             <Route path="/achievements" element={<AchievementsPage />} />
             <Route path="/tasks/beginner" element={<BeginnerPage />} />
             <Route path="/tasks/intermediate" element={<IntermediatePage />} />
+            <Route path="/tasks/additional" element={<AdditionalPage />} />
             <Route path="/level/:levelId" element={<LevelPage />} />
             <Route path="/theory" element={<TheoryPage />} />
             <Route path="/quiz" element={<Quiz />} />
