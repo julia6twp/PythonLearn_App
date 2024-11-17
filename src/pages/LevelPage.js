@@ -7,7 +7,7 @@ function LevelPage() {
     return (
         <div>
             <h1>Level {levelId}</h1>
-            <p>Here, you will see the content for level {levelId}.</p>
+            <p>Content for level {levelId}.</p>
             {/* W przyszłości pobierzesz dane o poziomie z backendu, bazując na levelId */}
         </div>
     );

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import LevelsList from '../components/levels/LevelsList';
 import MainAppBar from "../components/MainAppBar";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography"; // zaimportuj komponent z przyciskami poziomów
+import Typography from "@mui/material/Typography";
 
 function BeginnerPage() {
     // Lista poziomów - do zmiany po stworzeniu backendu
@@ -17,7 +17,7 @@ function BeginnerPage() {
                     variant="h4"
                     component="h1"
                     align="center"
-                    sx={{ fontWeight: 'bold' }}  // Dodaje pogrubienie
+                    sx={{ fontWeight: 'bold' }}
                 >
                     Difficulty level: Beginner
                 </Typography>
@@ -28,7 +28,7 @@ function BeginnerPage() {
                     variant="h4"
                     component="h1"
                     align="center"
-                    sx={{ fontSize: '1.5rem' }}  // Ustawia mniejszy rozmiar czcionki
+                    sx={{ fontSize: '1.5rem' }}
                 >
                     Choose Your Level
                 </Typography>
