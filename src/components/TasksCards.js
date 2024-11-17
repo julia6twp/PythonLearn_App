@@ -33,7 +33,7 @@ function TasksCards() {
                 title="Intermediate levels"
                 description="Engage with hands-on tasks to deepen your skills."
                 IconComponent={HourglassBottomIcon}
-                link="/levels"
+                link="/tasks/intermediate"
                 iconColor="orange"
             />
             <ActionAreaCard

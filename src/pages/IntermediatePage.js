@@ -4,8 +4,9 @@ import LevelsListBeginner from '../components/levels/LevelsListBeginner';
 import MainAppBar from "../components/MainAppBar";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import LevelsListIntermediate from "../components/levels/LevelsListIntermediate";
 
-function BeginnerPage() {
+function IntermediatePage() {
     // Lista poziomów - do zmiany po stworzeniu backendu
     const dummyLevels = Array.from({ length: 10 }, (_, i) => i + 1);
 
@@ -19,7 +20,7 @@ function BeginnerPage() {
                     align="center"
                     sx={{ fontWeight: 'bold' }}
                 >
-                    Difficulty level: Beginner
+                    Difficulty level: Intermediate
                 </Typography>
             </Box>
 
@@ -41,9 +42,9 @@ function BeginnerPage() {
             {/*<Link to="/practical-task">Go to Practical Task</Link>*/}
 
             {/* Lista poziomów */}
-            <LevelsListBeginner levels={dummyLevels} />
+            <LevelsListIntermediate levels={dummyLevels} />
         </div>
     );
 }
 
-export default BeginnerPage;
+export default IntermediatePage;

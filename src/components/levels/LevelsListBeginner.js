@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
-function LevelsList({ levels }) {
+function LevelsListBeginner({ levels }) {
     return (
         <Box
             sx={{
@@ -43,4 +43,4 @@ function LevelsList({ levels }) {
     );
 }
 
-export default LevelsList;
+export default LevelsListBeginner;
