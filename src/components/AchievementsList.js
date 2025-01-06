@@ -64,7 +64,7 @@ export default function AchievementsList() {
             title: 'QWERTY',
             description: 'First time entering a letter into the console.',
             IconComponent: KeyboardIcon,
-            isAchieved: false,
+            isAchieved: true,
         },
         {
             id: 7,
@@ -78,7 +78,7 @@ export default function AchievementsList() {
             title: 'Beginnings are difficult ',
             description: 'Three bad compilations in one task.',
             IconComponent: StairsIcon,
-            isAchieved: false,
+            isAchieved: true,
         },
         {
             id: 9,

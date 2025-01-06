@@ -19,7 +19,7 @@ import MenuItem from '@mui/material/MenuItem';
 import logo from '../assets/logo.png';
 
 const pages = ['Home','Tasks', 'About'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Profile', 'Logout'];
 
 function MainAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);

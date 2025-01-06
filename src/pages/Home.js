@@ -12,7 +12,7 @@ function Home() {
 
             <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: 4, paddingBottom: 4 }}>
                 <Typography variant="h4" component="h1" align="center">
-                    Witamy na stronie!
+                    Welcome to Python LEARING!
                 </Typography>
             </Box>
 

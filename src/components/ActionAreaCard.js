@@ -26,7 +26,6 @@ export default function ActionAreaCard({ title, description, IconComponent, link
                         paddingTop: 2,
                     }}
                 >
-                    {/* Wyświetlanie ikony */}
                     <IconComponent sx={{ fontSize: 80, color: iconColor }} />
                 </Box>
                 <CardContent>
