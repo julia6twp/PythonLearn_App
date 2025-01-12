@@ -1,4 +1,3 @@
-// src/components/MainAppBar.js
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
@@ -13,18 +12,19 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-
+import { useAuth } from './login/AuthContext'; // Importuj kontekst uwierzytelnienia
 
 // logo
 import logo from '../assets/logo.png';
 
-const pages = ['Home','Tasks', 'About'];
+const pages = ['Home', 'Tasks', 'About'];
 const settings = ['Profile', 'Logout'];
 
 function MainAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const navigate = useNavigate();
+    const { logout } = useAuth(); // Pobierz funkcję logout z kontekstu
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -36,8 +36,7 @@ function MainAppBar() {
             navigate('/about');
         } else if (page === 'Home') {
             navigate('/');
-        }
-        else if (page === 'Tasks') {
+        } else if (page === 'Tasks') {
             navigate('/tasks');
         }
     };
@@ -46,8 +45,15 @@ function MainAppBar() {
         setAnchorElUser(event.currentTarget);
     };
 
-    const handleCloseUserMenu = () => {
+    const handleCloseUserMenu = (setting) => {
         setAnchorElUser(null);
+
+        if (setting === 'Logout') {
+            logout(); // Wyloguj użytkownika
+            navigate('/login'); // Przekieruj na stronę logowania
+        } else if (setting === 'Profile') {
+            navigate('/profile'); // Przekieruj na stronę profilu (jeśli istnieje)
+        }
     };
 
     return (
@@ -129,10 +135,10 @@ function MainAppBar() {
                             keepMounted
                             transformOrigin={{ vertical: 'top', horizontal: 'right' }}
                             open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
+                            onClose={() => setAnchorElUser(null)}
                         >
                             {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                <MenuItem key={setting} onClick={() => handleCloseUserMenu(setting)}>
                                     <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
                                 </MenuItem>
                             ))}

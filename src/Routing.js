@@ -1,4 +1,3 @@
-// src/Routing.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
@@ -14,25 +13,114 @@ import TheoryPage from "./pages/TheoryPage";
 import AchievementsPage from "./pages/AchievementPage";
 import IntermediatePage from "./pages/IntermediatePage";
 import AdditionalPage from "./pages/AdditionalPage";
+import RegisterPage from "./pages/RegisterPage";
+import ProtectedRoute from './components/login/ProtectedRoute';
+import { AuthProvider } from './components/login/AuthContext';
 
 function Routing() {
     return (
-        <Routes>
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/tasks" element={<Tasks />} />
-            <Route path="/achievements" element={<AchievementsPage />} />
-            <Route path="/tasks/beginner" element={<BeginnerPage />} />
-            <Route path="/tasks/intermediate" element={<IntermediatePage />} />
-            <Route path="/tasks/additional" element={<AdditionalPage />} />
-            <Route path="/level/:levelId" element={<LevelPage />} />
-            <Route path="/theory" element={<TheoryPage />} />
-            <Route path="/quiz" element={<Quiz />} />
-            <Route path="/practical-task" element={<PracticalTask />} />
-            <Route path="*" element={<ErrorPage />} />
-        </Routes>
+        <AuthProvider>
+            <Routes>
+                {/* Dostępne dla wszystkich */}
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+
+                {/* Strony wymagające uwierzytelnienia */}
+                <Route
+                    path="/"
+                    element={
+                        <ProtectedRoute>
+                            <Home />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/about"
+                    element={
+                        <ProtectedRoute>
+                            <About />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/tasks"
+                    element={
+                        <ProtectedRoute>
+                            <Tasks />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/achievements"
+                    element={
+                        <ProtectedRoute>
+                            <AchievementsPage />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/tasks/beginner"
+                    element={
+                        <ProtectedRoute>
+                            <BeginnerPage />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/tasks/intermediate"
+                    element={
+                        <ProtectedRoute>
+                            <IntermediatePage />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/tasks/additional"
+                    element={
+                        <ProtectedRoute>
+                            <AdditionalPage />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/level/:levelId"
+                    element={
+                        <ProtectedRoute>
+                            <LevelPage />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/theory"
+                    element={
+                        <ProtectedRoute>
+                            <TheoryPage />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/quiz"
+                    element={
+                        <ProtectedRoute>
+                            <Quiz />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/practical-task"
+                    element={
+                        <ProtectedRoute>
+                            <PracticalTask />
+                        </ProtectedRoute>
+                    }
+                />
+
+                {/* Strona błędu */}
+                <Route path="*" element={<ErrorPage />} />
+            </Routes>
+        </AuthProvider>
     );
 }
 
 export default Routing;
+

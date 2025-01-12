@@ -1,17 +1,17 @@
 import React from 'react';
-import LoginTextField from '../../components/login/LoginTextField';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import logo from '../../assets/logo.png';
+import Box from "@mui/material/Box";
+import logo from "../assets/logo.png";
+import Typography from "@mui/material/Typography";
+import RegisterTextField from "../components/login/RegisterTextField";
+import {useNavigate} from "react-router-dom";
 import {Button} from "@mui/material";
-import {useNavigate} from "react-router-dom"; // Upewnij się, że ścieżka do logo jest poprawna
 
-
-function LoginPage() {
+function RegisterPage() {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate("/register");
+        navigate("/login");
     };
+
     return (
         <Box
             sx={{
@@ -19,7 +19,7 @@ function LoginPage() {
                 minHeight: '100vh'
             }}
         >
-            {/* Lewa kolumna - logo i formularz logowania */}
+
             <Box
                 sx={{
                     flex: 1,
@@ -30,12 +30,12 @@ function LoginPage() {
                     padding: 4
                 }}
             >
-                {/* Logo i nazwa aplikacji */}
+
                 <Box
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        marginBottom: 4 // odstęp między logo a formularzem
+                        marginBottom: 4
                     }}
                 >
                     <img
@@ -54,25 +54,26 @@ function LoginPage() {
                             letterSpacing: '.3rem',
                             color: 'inherit',
                             textDecoration: 'none',
-                            fontSize: '54px', // Zmieniamy rozmiar czcionki
+                            fontSize: '54px',
                         }}
                     >
                         LEARNING
                     </Typography>
                 </Box>
 
-                {/* Formularz logowania */}
-                <LoginTextField />
+
+                <RegisterTextField />
                 <Button onClick={handleClick} sx={{
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
                     paddingTop: 2,
                     fontSize: 13,
-                }}>Register</Button>
+                }}>Log in</Button>
+
             </Box>
 
-            {/* Prawa kolumna - obraz */}
+
             <Box
                 sx={{
                     flex: 1,
@@ -83,6 +84,7 @@ function LoginPage() {
             />
         </Box>
     );
+
 }
 
-export default LoginPage;
+export default RegisterPage;
