@@ -23,8 +23,12 @@ function PracticalTask({ difficulty, level }) {
     useEffect(() => {
         // Pobierz poprawną odpowiedź z backendu
         const getAnswer = async () => {
-            const answer = await fetchAnswer(difficulty, level);
-            setCorrectAnswer(answer);
+            try {
+                const answer = await fetchAnswer(difficulty, level);
+                setCorrectAnswer(answer);
+            } catch (error) {
+                setResultMessage('Error loading correct answer.');
+            }
         };
         getAnswer();
     }, [difficulty, level]);
@@ -37,7 +41,7 @@ function PracticalTask({ difficulty, level }) {
         }
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/execute-and-compare/', {
+            const response = await fetch('http://127.0.0.1:8000/execute-code/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -46,12 +50,20 @@ function PracticalTask({ difficulty, level }) {
             });
 
             const result = await response.json();
+
+            // Sprawdzenie statusu odpowiedzi
             if (result.status === 'success') {
-                setResultMessage('Correct answer!');
-            } else if (result.status === 'fail') {
-                setResultMessage(`Incorrect answer. Expected: ${result.expected}, Got: ${result.actual}`);
-            } else {
+                // Porównanie console_output z correctAnswer
+                if (result.console_output === correctAnswer) {
+                    setResultMessage('Correct answer!');
+                } else {
+                    setResultMessage(`Incorrect answer. Expected: ${correctAnswer}, Got: ${result.console_output}`);
+                }
+            } else if (result.status === 'error') {
+                // Obsługa błędów wykonania
                 setResultMessage(`Error: ${result.error}`);
+            } else {
+                setResultMessage('Unexpected response from server.');
             }
         } catch (error) {
             setResultMessage(`Failed to send code to server: ${error.message}`);

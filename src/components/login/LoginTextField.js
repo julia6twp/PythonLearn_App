@@ -19,7 +19,7 @@ export default function LoginTextField() {
 
     // Funkcja do obsługi logowania
     const handleLogin = async (event) => {
-        event.preventDefault(); // Zapobiega odświeżeniu strony
+        event.preventDefault();
 
         try {
             const response = await fetch('http://127.0.0.1:8000/login/', {
@@ -31,21 +31,18 @@ export default function LoginTextField() {
             });
 
             if (response.ok) {
-                // Logowanie zakończone sukcesem
                 const data = await response.json();
-                authLogin(); // Wywołanie funkcji login z kontekstu
-                alert("Zalogowano pomyślnie!");
-                navigate("/"); // Przekierowanie na stronę główną
+                authLogin();
+                navigate("/");
             } else {
-                // Błąd logowania
                 const errorData = await response.json();
-                setServerError(errorData.error || "Niepoprawny login lub hasło.");
+                setServerError(errorData.error || "Incorrect login or password.");
                 setLoginError(true);
                 setPasswordError(true);
             }
         } catch (error) {
-            console.error("Błąd podczas logowania:", error);
-            setServerError("Nie udało się połączyć z serwerem.");
+            console.error("Login error:", error);
+            setServerError("Server connection error.");
         }
     };
 

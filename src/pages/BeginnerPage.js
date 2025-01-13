@@ -24,7 +24,7 @@ function BeginnerPage() {
     useEffect(() => {
         async function loadLevels() {
             const data = await fetchLevels();
-            // Sprawdź, czy poziom "beginner" istnieje w danych
+
             if (data.beginner) {
                 setLevels(Array.from({ length: data.beginner }, (_, i) => i + 1));
             }
