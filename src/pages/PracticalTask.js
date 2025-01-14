@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, TextField, Button, Typography } from '@mui/material';
+import { Box, TextField, Button, Alert } from '@mui/material';
 
 async function fetchAnswer(difficulty, level) {
     try {
@@ -8,7 +8,7 @@ async function fetchAnswer(difficulty, level) {
             throw new Error(`Error: ${response.statusText}`);
         }
         const data = await response.json();
-        return data.answer; // Zwraca poprawną odpowiedź
+        return data.answer;
     } catch (error) {
         console.error('Failed to fetch answer from server:', error);
         return null;
@@ -19,24 +19,26 @@ function PracticalTask({ difficulty, level }) {
     const [code, setCode] = useState('');
     const [correctAnswer, setCorrectAnswer] = useState(null);
     const [resultMessage, setResultMessage] = useState('');
+    const [alertSeverity, setAlertSeverity] = useState(''); // 'success' or 'error'
 
     useEffect(() => {
-        // Pobierz poprawną odpowiedź z backendu
         const getAnswer = async () => {
             try {
                 const answer = await fetchAnswer(difficulty, level);
                 setCorrectAnswer(answer);
             } catch (error) {
                 setResultMessage('Error loading correct answer.');
+                setAlertSeverity('error');
             }
         };
         getAnswer();
     }, [difficulty, level]);
 
     const handleCompile = async (e) => {
-        e.preventDefault(); // Zapobiega odświeżeniu strony
+        e.preventDefault();
         if (!correctAnswer) {
             setResultMessage('Error: Correct answer not loaded.');
+            setAlertSeverity('error');
             return;
         }
 
@@ -51,22 +53,26 @@ function PracticalTask({ difficulty, level }) {
 
             const result = await response.json();
 
-            // Sprawdzenie statusu odpowiedzi
             if (result.status === 'success') {
-                // Porównanie console_output z correctAnswer
                 if (result.console_output === correctAnswer) {
                     setResultMessage('Correct answer!');
+                    setAlertSeverity('success');
                 } else {
-                    setResultMessage(`Incorrect answer. Expected: ${correctAnswer}, Got: ${result.console_output}`);
+                    setResultMessage(
+                        `Incorrect answer. Expected: ${correctAnswer}, Got: ${result.console_output}`
+                    );
+                    setAlertSeverity('error');
                 }
             } else if (result.status === 'error') {
-                // Obsługa błędów wykonania
                 setResultMessage(`Error: ${result.error}`);
+                setAlertSeverity('error');
             } else {
                 setResultMessage('Unexpected response from server.');
+                setAlertSeverity('error');
             }
         } catch (error) {
             setResultMessage(`Failed to send code to server: ${error.message}`);
+            setAlertSeverity('error');
         }
     };
 
@@ -74,7 +80,7 @@ function PracticalTask({ difficulty, level }) {
         <div>
             <Box
                 component="form"
-                onSubmit={handleCompile} // Obsługa przesyłania formularza
+                onSubmit={handleCompile}
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -117,11 +123,11 @@ function PracticalTask({ difficulty, level }) {
                     </Button>
                 </Box>
 
-                {/* Wyświetlanie wyniku */}
+                {/* Wyświetlanie alertów na podstawie stanu */}
                 {resultMessage && (
-                    <Typography variant="h6" sx={{ marginTop: 2, color: 'blue' }}>
+                    <Alert severity={alertSeverity} sx={{ width: '1000px', marginTop: 2 }}>
                         {resultMessage}
-                    </Typography>
+                    </Alert>
                 )}
             </Box>
         </div>

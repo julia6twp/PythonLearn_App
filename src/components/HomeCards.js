@@ -22,21 +22,21 @@ function HomeCards() {
 
             <ActionAreaCard
                 title="About Us"
-                description="Test your knowledge with our interactive quizzes."
+                description="Learn more about the game."
                 IconComponent={InfoIcon}
                 link="/about"
                 iconColor="black"
             />
             <ActionAreaCard
                 title="Tasks"
-                description="Engage with hands-on tasks to deepen your skills."
+                description="Check which tasks are available."
                 IconComponent={AssignmentIcon}
                 link="/tasks"
                 iconColor="black"
             />
             <ActionAreaCard
                 title="Achievements"
-                description="Join discussions and learn from other developers."
+                description="View the achievements you’ve earned."
                 IconComponent={EmojiEventsIcon}
                 link="/achievements"
                 iconColor="black"

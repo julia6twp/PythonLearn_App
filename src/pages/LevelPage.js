@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import MainAppBar from "../components/MainAppBar";
 import PracticalTask from "./PracticalTask";
+import {Box, Typography} from "@mui/material";
+import QuizComponent from "../components/QuizComponent";
 
 function LevelPage() {
     const { levelId } = useParams();
@@ -59,5 +61,6 @@ function LevelPage() {
         </div>
     );
 }
+
 
 export default LevelPage;

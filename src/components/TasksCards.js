@@ -24,21 +24,21 @@ function TasksCards() {
 
             <ActionAreaCard
                 title="Beginner levels"
-                description="Test your knowledge with our interactive quizzes."
+                description="Your first time with Python."
                 IconComponent={BedroomBabyIcon}
                 link="/tasks/beginner"
                 iconColor="green"
             />
             <ActionAreaCard
                 title="Intermediate levels"
-                description="Engage with hands-on tasks to deepen your skills."
+                description="Expand your knowledge and skills by completing tasks."
                 IconComponent={HourglassBottomIcon}
                 link="/tasks/intermediate"
                 iconColor="orange"
             />
             <ActionAreaCard
                 title="Additional levels"
-                description="Join discussions and learn from other developers."
+                description="Learn the most commonly used Python libraries."
                 IconComponent={ScienceIcon}
                 link="/tasks/additional"
                 iconColor="black"
