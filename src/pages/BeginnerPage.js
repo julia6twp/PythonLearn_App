@@ -57,7 +57,7 @@ function BeginnerPage() {
                 </Typography>
             </Box>
 
-            {/* Lista poziomów */}
+            {/* tu wstawić poziomy */}
             <LevelsListBeginner levels={levels} />
         </div>
     );

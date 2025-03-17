@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import LevelsListIntermediate from "../components/levels/LevelsListIntermediate";
 
 function IntermediatePage() {
-    // Lista poziomów - do zmiany po stworzeniu backendu
+
     const dummyLevels = Array.from({ length: 10 }, (_, i) => i + 1);
 
     return (
@@ -35,13 +35,6 @@ function IntermediatePage() {
                 </Typography>
             </Box>
 
-
-            {/* Linki do quizu i zadania praktycznego */}
-            {/*<Link to="/quiz">Go to Quiz</Link>*/}
-            {/*<br />*/}
-            {/*<Link to="/practical-task">Go to Practical Task</Link>*/}
-
-            {/* Lista poziomów */}
             <LevelsListIntermediate levels={dummyLevels} />
         </div>
     );

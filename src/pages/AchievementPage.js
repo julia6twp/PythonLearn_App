@@ -1,5 +1,3 @@
-// src/pages/AchievementsPage.js
-
 import React from 'react';
 import AchievementsList from '../components/AchievementsList';
 import MainAppBar from "../components/MainAppBar";

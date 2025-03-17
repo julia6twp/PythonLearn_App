@@ -25,8 +25,8 @@ function LevelsListIntermediate({ levels }) {
                             height: '80px',
                             backgroundColor: 'orange',
                             color: 'white',
-                            fontSize: '1.5rem',  // Powiększa rozmiar tekstu
-                            fontWeight: 'bold',  // Opcjonalnie, dodaje pogrubienie
+                            fontSize: '1.5rem',
+                            fontWeight: 'bold',
                             borderRadius: 0,
                             '&:hover': {
                                 backgroundColor: 'darkorange'
@@ -34,8 +34,6 @@ function LevelsListIntermediate({ levels }) {
                         }}
                     >
                         {level}
-                    {/*    Gry ukończony poziom*/}
-                    {/*    import DoneIcon from '@mui/icons-material/Done'; */}
                     </Button>
                 </Link>
             ))}

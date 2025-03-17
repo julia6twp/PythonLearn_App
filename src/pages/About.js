@@ -104,7 +104,6 @@ function About() {
         <div>
             <MainAppBar />
             <CustomizedAccordions/>
-            {/* Inne elementy strony About */}
         </div>
     );
 }

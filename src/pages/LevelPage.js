@@ -52,8 +52,8 @@ function LevelPage() {
     return (
         <div>
             <MainAppBar />
-
             <h1>Level {levelData.level}</h1>
+            {/*<h1>Level 2</h1>*/}
             <p><strong>Task:</strong> {levelData.task}</p>
             {/*<p><strong>Answer:</strong> {levelData.answer}</p>*/}
             <PracticalTask difficulty="beginner" level={levelId} />

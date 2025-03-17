@@ -12,9 +12,9 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { useAuth } from './login/AuthContext'; // Importuj kontekst uwierzytelnienia
+import { useAuth } from './login/AuthContext';
 
-// logo
+
 import logo from '../assets/logo.png';
 
 const pages = ['Home', 'Tasks', 'About'];
@@ -24,7 +24,7 @@ function MainAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const navigate = useNavigate();
-    const { logout } = useAuth(); // Pobierz funkcję logout z kontekstu
+    const { logout } = useAuth();
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -33,7 +33,7 @@ function MainAppBar() {
     const handleCloseNavMenu = (page) => {
         setAnchorElNav(null);
         if (page === 'About') {
-            navigate('/about');
+            navigate('/quiz');
         } else if (page === 'Home') {
             navigate('/');
         } else if (page === 'Tasks') {
@@ -49,10 +49,10 @@ function MainAppBar() {
         setAnchorElUser(null);
 
         if (setting === 'Logout') {
-            logout(); // Wyloguj użytkownika
-            navigate('/login'); // Przekieruj na stronę logowania
+            logout();
+            navigate('/login');
         } else if (setting === 'Profile') {
-            navigate('/profile'); // Przekieruj na stronę profilu (jeśli istnieje)
+            navigate('/ranking');
         }
     };
 

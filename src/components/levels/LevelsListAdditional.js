@@ -25,8 +25,8 @@ function LevelsListAdditional({ levels }) {
                             height: '80px',
                             backgroundColor: '#000000',
                             color: 'white',
-                            fontSize: '1.5rem',  // Powiększa rozmiar tekstu
-                            fontWeight: 'bold',  // Opcjonalnie, dodaje pogrubienie
+                            fontSize: '1.5rem',
+                            fontWeight: 'bold',
                             borderRadius: 0,
                             '&:hover': {
                                 backgroundColor: '#2a2a2a'
@@ -34,8 +34,6 @@ function LevelsListAdditional({ levels }) {
                         }}
                     >
                         {level}
-                    {/*    Gry ukończony poziom*/}
-                    {/*    import DoneIcon from '@mui/icons-material/Done'; */}
                     </Button>
                 </Link>
             ))}

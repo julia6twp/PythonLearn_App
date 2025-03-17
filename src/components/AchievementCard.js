@@ -1,5 +1,3 @@
-// src/components/AchievementCard.js
-
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -13,12 +11,12 @@ export default function AchievementCard({ title, description, IconComponent, isA
     return (
         <Card
             sx={{
-                width: 300, // Stała szerokość
-                height: 260, // Stała wysokość
+                width: 300,
+                height: 260,
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between', // Ustaw elementy w pionie
-                alignItems: 'center', // Wyśrodkuj zawartość
+                justifyContent: 'space-between',
+                alignItems: 'center',
             }}
         >
             <CardActionArea sx={{ flexGrow: 1 }}>
@@ -37,13 +35,13 @@ export default function AchievementCard({ title, description, IconComponent, isA
                         gutterBottom
                         variant="h5"
                         component="div"
-                        align="center" // Wyśrodkuj tekst w poziomie
+                        align="center"
                     >
                         {title}
                     </Typography>
                     <Typography
                         variant="body2"
-                        sx={{ color: 'text.secondary', textAlign: 'center' }} // Wyśrodkuj opis
+                        sx={{ color: 'text.secondary', textAlign: 'center' }}
                     >
                         {description}
                     </Typography>

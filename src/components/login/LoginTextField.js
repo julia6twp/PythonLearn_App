@@ -4,20 +4,18 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from "react-router-dom";
-import { useAuth } from './AuthContext'; // Import funkcji login z kontekstu
+import { useAuth } from './AuthContext';
 
 export default function LoginTextField() {
     const navigate = useNavigate();
-    const { login: authLogin } = useAuth(); // Funkcja login z kontekstu
+    const { login: authLogin } = useAuth();
 
-    // Stany dla loginu, hasła oraz błędów
     const [login, setLogin] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [loginError, setLoginError] = React.useState(false);
     const [passwordError, setPasswordError] = React.useState(false);
     const [serverError, setServerError] = React.useState(''); // Błąd z serwera
 
-    // Funkcja do obsługi logowania
     const handleLogin = async (event) => {
         event.preventDefault();
 
@@ -56,8 +54,8 @@ export default function LoginTextField() {
                 alignItems: 'center',
                 '& .MuiTextField-root': { m: 1, width: '25ch' },
                 justifyContent: 'center',
-                gap: 3, // odstępy między kartami
-                paddingTop: 5, // odstęp od góry strony
+                gap: 3,
+                paddingTop: 5,
             }}
             noValidate
             autoComplete="off"
@@ -68,7 +66,7 @@ export default function LoginTextField() {
                 value={login}
                 onChange={(e) => {
                     setLogin(e.target.value);
-                    setLoginError(false); // Reset błędu
+                    setLoginError(false);
                 }}
                 helperText={loginError ? "Incorrect login." : ""}
             />
@@ -79,7 +77,7 @@ export default function LoginTextField() {
                 value={password}
                 onChange={(e) => {
                     setPassword(e.target.value);
-                    setPasswordError(false); // Reset błędu
+                    setPasswordError(false);
                 }}
                 helperText={passwordError ? "Incorrect password." : ""}
             />

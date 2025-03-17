@@ -1,5 +1,3 @@
-// src/components/HomeCards.js
-
 import React from 'react';
 import ActionAreaCard from './ActionAreaCard';
 import Box from '@mui/material/Box';
@@ -17,27 +15,27 @@ function TasksCards() {
             sx={{
                 display: 'flex',
                 justifyContent: 'center',
-                gap: 4, // odstępy między kartami
-                paddingTop: 25, // odstęp od góry strony
+                gap: 4,
+                paddingTop: 25,
             }}
         >
 
             <ActionAreaCard
-                title="Beginner levels"
+                title="Beginner"
                 description="Your first time with Python."
                 IconComponent={BedroomBabyIcon}
                 link="/tasks/beginner"
                 iconColor="green"
             />
             <ActionAreaCard
-                title="Intermediate levels"
+                title="Intermediate"
                 description="Expand your knowledge and skills by completing tasks."
                 IconComponent={HourglassBottomIcon}
                 link="/tasks/intermediate"
                 iconColor="orange"
             />
             <ActionAreaCard
-                title="Additional levels"
+                title="Libraries"
                 description="Learn the most commonly used Python libraries."
                 IconComponent={ScienceIcon}
                 link="/tasks/additional"

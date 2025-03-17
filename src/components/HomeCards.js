@@ -1,5 +1,3 @@
-// src/components/HomeCards.js
-
 import React from 'react';
 import ActionAreaCard from './ActionAreaCard';
 import Box from '@mui/material/Box';
@@ -15,13 +13,13 @@ function HomeCards() {
             sx={{
                 display: 'flex',
                 justifyContent: 'center',
-                gap: 4, // odstępy między kartami
-                paddingTop: 4, // odstęp od góry strony
+                gap: 4,
+                paddingTop: 4, // odstęp od góry
             }}
         >
 
             <ActionAreaCard
-                title="About Us"
+                title="About"
                 description="Learn more about the game."
                 IconComponent={InfoIcon}
                 link="/about"

@@ -1,4 +1,3 @@
-// src/pages/ErrorPage.js
 import React from 'react';
 
 function ErrorPage() {

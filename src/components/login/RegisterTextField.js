@@ -8,17 +8,16 @@ import { useNavigate } from "react-router-dom";
 export default function RegisterTextField() {
     const navigate = useNavigate();
 
-    // Stany dla loginu, hasła oraz ich błędów
+
     const [login, setLogin] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [reppassword, setrepPassword] = React.useState('');
     const [loginError, setLoginError] = React.useState(false);
     const [passwordError, setPasswordError] = React.useState(false);
-    const [serverError, setServerError] = React.useState(''); // Błąd z serwera
+    const [serverError, setServerError] = React.useState('');
 
-    // Funkcja do obsługi rejestrowania
     const handleRegister = async (event) => {
-        event.preventDefault(); // zapobiega odświeżeniu strony
+        event.preventDefault();
 
         const isPasswordCorrect = password === reppassword;
         setPasswordError(!isPasswordCorrect);
@@ -59,8 +58,8 @@ export default function RegisterTextField() {
                 alignItems: 'center',
                 '& .MuiTextField-root': { m: 1, width: '25ch' },
                 justifyContent: 'center',
-                gap: 3, // odstępy między kartami
-                paddingTop: 5, // odstęp od góry strony
+                gap: 3,
+                paddingTop: 5,
             }}
             noValidate
             autoComplete="off"

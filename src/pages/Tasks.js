@@ -8,7 +8,6 @@ function Tasks() {
     return (
         <div>
             <MainAppBar />
-            {/* Inne elementy strony About */}
             <TasksCards />
         </div>
     );

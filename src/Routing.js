@@ -16,16 +16,15 @@ import AdditionalPage from "./pages/AdditionalPage";
 import RegisterPage from "./pages/RegisterPage";
 import ProtectedRoute from './components/login/ProtectedRoute';
 import { AuthProvider } from './components/login/AuthContext';
+import Ranking from "./pages/Ranking";
 
 function Routing() {
     return (
         <AuthProvider>
             <Routes>
-                {/* Dostępne dla wszystkich */}
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
 
-                {/* Strony wymagające uwierzytelnienia */}
                 <Route
                     path="/"
                     element={
@@ -114,8 +113,15 @@ function Routing() {
                         </ProtectedRoute>
                     }
                 />
+                <Route
+                    path="/ranking"
+                    element={
+                        <ProtectedRoute>
+                            <Ranking />
+                        </ProtectedRoute>
+                    }
+                />
 
-                {/* Strona błędu */}
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
         </AuthProvider>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import LockIcon from '@mui/icons-material/Lock';
 
 function LevelsListBeginner({ levels }) {
     return (
@@ -17,25 +18,27 @@ function LevelsListBeginner({ levels }) {
             }}
         >
             {levels.map((level) => (
-                <Link to={`/level/${level}`} key={level} style={{ textDecoration: 'none' }}>
+                <Link
+                    to={level <= 5 ? `/level/${level}` : '#'}
+                    key={level}
+                    style={{ textDecoration: 'none', pointerEvents: level > 5 ? 'none' : 'auto' }}
+                >
                     <Button
                         variant="contained"
                         sx={{
                             width: '80px',
                             height: '80px',
-                            backgroundColor: 'green',
+                            backgroundColor: level <= 5 ? 'green' : 'grey',
                             color: 'white',
-                            fontSize: '1.5rem',  // Powiększa rozmiar tekstu
-                            fontWeight: 'bold',  // Opcjonalnie, dodaje pogrubienie
+                            fontSize: '1.5rem',
+                            fontWeight: 'bold',
                             borderRadius: 0,
                             '&:hover': {
-                                backgroundColor: 'darkgreen'
+                                backgroundColor: level <= 5 ? 'darkgreen' : 'darkgrey'
                             }
                         }}
                     >
-                        {level}
-                    {/*    Gry ukończony poziom*/}
-                    {/*    import DoneIcon from '@mui/icons-material/Done'; */}
+                        {level <= 5 ? level : <LockIcon />}
                     </Button>
                 </Link>
             ))}
@@ -44,3 +47,4 @@ function LevelsListBeginner({ levels }) {
 }
 
 export default LevelsListBeginner;
+

@@ -4,7 +4,6 @@ import React from 'react';
 import AchievementCard from './AchievementCard';
 import Box from '@mui/material/Box';
 
-// MUI icons
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -20,9 +19,10 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import CodeIcon from '@mui/icons-material/Code';
 import PestControlIcon from '@mui/icons-material/PestControl';
 import SportsScoreIcon from '@mui/icons-material/SportsScore';
-
+import PanToolIcon from '@mui/icons-material/PanTool';
+import FunctionsIcon from '@mui/icons-material/Functions';
 export default function AchievementsList() {
-    // Przykładowe osiągnięcia
+
     const achievements = [
         {
             id: 1,
@@ -62,23 +62,23 @@ export default function AchievementsList() {
         {
             id: 6,
             title: 'QWERTY',
-            description: 'First time entering a letter into the console.',
+            description: 'Using the input() function for the first time.',
             IconComponent: KeyboardIcon,
             isAchieved: true,
         },
         {
             id: 7,
             title: 'Time to use the library!',
-            description: 'Include the library for the first time',
+            description: 'Include the library for the first time.',
             IconComponent: LocalLibraryIcon,
-            isAchieved: false,
+            isAchieved: true,
         },
         {
             id: 8,
-            title: 'Beginnings are difficult ',
-            description: 'Three bad compilations in one task.',
-            IconComponent: StairsIcon,
-            isAchieved: true,
+            title: 'Code Ninja',
+            description: 'Write 30 lines of clean, functional code.',
+            IconComponent: PanToolIcon,
+            isAchieved: false,
         },
         {
             id: 9,
@@ -99,12 +99,12 @@ export default function AchievementsList() {
             title: 'List it !!!',
             description: 'Use list for the first time.',
             IconComponent: ListIcon,
-            isAchieved: false,
+            isAchieved: true,
         },
         {
             id: 12,
             title: 'It works!',
-            description: 'Build your first neural network)',
+            description: 'Build your first neural network.',
             IconComponent: PsychologyIcon,
             isAchieved: false,
         },
@@ -113,13 +113,13 @@ export default function AchievementsList() {
             title: 'Code It!',
             description: 'Compile Your Code for the First Time.',
             IconComponent: CodeIcon,
-            isAchieved: false,
+            isAchieved: true,
         },
         {
             id: 14,
-            title: 'There is a bug here!',
-            description: 'Incorrect result.',
-            IconComponent: PestControlIcon,
+            title: 'Algorithm Master',
+            description: 'Implement your first sorting algorithm',
+            IconComponent: FunctionsIcon,
             isAchieved: false,
         },
         {
@@ -137,7 +137,7 @@ export default function AchievementsList() {
                 display: 'flex',
                 flexWrap: 'wrap',
                 justifyContent: 'center',
-                gap: 4, // Odstępy między kartami
+                gap: 4,
                 padding: 4,
             }}
         >

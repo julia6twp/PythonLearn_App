@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box, TextField, Button, Alert } from '@mui/material';
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 
 async function fetchAnswer(difficulty, level) {
     try {
@@ -99,7 +100,7 @@ function PracticalTask({ difficulty, level }) {
                     multiline
                     sx={{
                         width: '1000px',
-                        height: '600px',
+                        height: '455px', //455 (normalnie 600)
                         '& .MuiInputBase-root': {
                             height: '100%',
                             alignItems: 'flex-start',
@@ -123,12 +124,12 @@ function PracticalTask({ difficulty, level }) {
                     </Button>
                 </Box>
 
-                {/* Wyświetlanie alertów na podstawie stanu */}
                 {resultMessage && (
                     <Alert severity={alertSeverity} sx={{ width: '1000px', marginTop: 2 }}>
                         {resultMessage}
                     </Alert>
                 )}
+
             </Box>
         </div>
     );

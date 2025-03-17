@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from 'react';
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
-    const [isAuthenticated, setIsAuthenticated] = useState(false); // Domyślnie użytkownik jest niezalogowany
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const login = () => setIsAuthenticated(true);
     const logout = () => setIsAuthenticated(false);

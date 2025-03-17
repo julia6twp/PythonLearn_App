@@ -16,17 +16,17 @@ export default function ActionAreaCard({ title, description, IconComponent, link
     return (
         <Card
             sx={{
-                width: 325, // Stała szerokość
-                height: 250, // Stała wysokość
+                width: 325,
+                height: 250,
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between', // Rozdzielenie zawartości
+                justifyContent: 'space-between',
             }}
             onClick={handleClick}
         >
             <CardActionArea
                 sx={{
-                    height: '100%', // Wypełnienie całej karty
+                    height: '100%',
                 }}
             >
                 <Box
@@ -41,10 +41,10 @@ export default function ActionAreaCard({ title, description, IconComponent, link
                 </Box>
                 <CardContent
                     sx={{
-                        flexGrow: 1, // Rozciąganie zawartości w pionie
+                        flexGrow: 1,
                         display: 'flex',
                         flexDirection: 'column',
-                        justifyContent: 'center', // Wyśrodkowanie tekstu w pionie
+                        justifyContent: 'center',
                         textAlign: 'center',
                     }}
                 >
@@ -53,9 +53,9 @@ export default function ActionAreaCard({ title, description, IconComponent, link
                         variant="h5"
                         component="div"
                         sx={{
-                            overflow: 'hidden', // Ukrycie nadmiaru tekstu
-                            textOverflow: 'ellipsis', // Dodanie "..." dla długiego tekstu
-                            whiteSpace: 'nowrap', // Zablokowanie zawijania tekstu
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            whiteSpace: 'nowrap',
                         }}
                     >
                         {title}
@@ -67,7 +67,7 @@ export default function ActionAreaCard({ title, description, IconComponent, link
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                             display: '-webkit-box',
-                            WebkitLineClamp: 2, // Maksymalna liczba linii
+                            WebkitLineClamp: 2,
                             WebkitBoxOrient: 'vertical',
                         }}
                     >
